@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
   </head>
   <nav>
     <ul>
@@ -15,18 +16,15 @@
   </nav>
   <body>
     <div id="content">
-      <div id="text">
-        <h1>Yisu Wang</h1>
-        <p>This is my portfolio.</p>
-      </div>
-      <button onclick=openAbout()>
-        <div id="btn-txt">About me</div>
+      <h1>Fun</h1>
+      <button onclick=refresh()>
+        <div id="btn-txt">Change a Emoji</div>
       </button>
     </div>
-    <script>
-      function openAbout() {
-        window.open("about.html", "_self");
-      }
-    </script>
   </body>
+  <script>
+    function refresh() {
+      window.open("fun.html", "_self");
+    }
+  </script>
 </html>
