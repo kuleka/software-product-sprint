@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
   </head>
   <nav>
     <ul>
@@ -16,9 +15,18 @@
   </nav>
   <body>
     <div id="content">
-      <h1>Yisu Wang</h1>
-      <p>This is my portfolio.</p>
-      <button onclick=openAbout()>About me</button>
+      <div id="text">
+        <h1>Yisu Wang</h1>
+        <p>This is my portfolio.</p>
+      </div>
+      <button onclick=openAbout()>
+        <div id="btn-txt">About me</div>
+      </button>
     </div>
+    <script>
+      function openAbout() {
+        window.open("about.html", "_self");
+      }
+    </script>
   </body>
 </html>
