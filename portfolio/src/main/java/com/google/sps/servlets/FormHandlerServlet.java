@@ -22,11 +22,11 @@ public class FormHandlerServlet extends HttpServlet {
     System.out.println("user submitted: " + textValue);
     System.out.println("user name: " + name);
     System.out.println("user email: " + email);
-    System.out.println("Submition Ends");
+    System.out.println("User Submition Ends");
 
-    // Write the value to the response so the user can see it.
-    //response.getWriter().write("<script> alert('Submition Success!'); </script>");
-    response.sendRedirect("https://ywang-sps-summer22.appspot.com/contact.html");
+    // show the alert to the response so the user can see it, redirect to the page
+    response.getWriter().println("<script> alert('Submition Success!'); window.location.href='/contact.html' </script>");
+    //response.sendRedirect("https://ywang-sps-summer22.appspot.com/contact.html");
     //response.getWriter().println("You submitted: " + textValue);
   }
 }

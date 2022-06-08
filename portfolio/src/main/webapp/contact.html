@@ -18,20 +18,21 @@
     <div id="content">
         <form action="/form-handler" method="POST">
             <p> Your name:</p>
-            <input form="text" name="name-input"/>
+            <input type="text" name="name-input"/>
             <br/>
             
             <p>Leave me some messages here:</p>
-            <textarea name="text-input">
-            </textarea>
+            <textarea name="text-input"></textarea>
             <br/>
 
             <p> Your email:</p>
-            <input form="text" name="email-input"/>
+            <input type="email" name="email-input"/>
             <br/>
             <br/>
             
-            <input type="submit" />
+            <button type="submit"> 
+                Submit
+            </button>
           </form>
     </div>
   </body>
