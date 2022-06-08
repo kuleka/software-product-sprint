@@ -65,15 +65,17 @@
   }
   
   button{
-    border-radius: 20px;
+    border-radius: 980px;
     height: 2.5em;
     width: 10em;
-    border-width: 1px;
+    border-width: 2px;
     background: none;
+    transition: all 0.5s;
   }
   button:hover{
     border-width: 2px;
     background:white;
+    
   }
   
   #text{
@@ -81,10 +83,10 @@
   }
   
   #btn-txt{
-    font-size: 1em;
-    font-weight: bold;
     color: black;
     text-decoration: none;
+    font-weight: bold;
+    padding: 12px, 22px;
   }
   
   #github {

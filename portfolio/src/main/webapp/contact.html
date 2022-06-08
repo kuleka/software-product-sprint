@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -16,23 +16,23 @@
   </nav>
   <body>
     <div id="content">
-      <h1> About me</h1>
-      <h3>Hello, my name is Yisu Wang.</h3>
-      <p>
-        I am a student at the Dalhousie University. I am majoring in Computer Science.
-        
-      </p>
-      
-    </div>
-    <div id="links">
-        <div class="external-links">
-            <a id="github" href="https://github.com/kuleka" style="text-decoration:none" target="_blank" rel="noopener noreferrer">
-            </a>
-
-            <a id="linkedin" href="https://www.linkedin.com/in/yisu-w/" style="text-decoration:none" target="_blank" rel="noopener noreferrer">
+        <form action="/form-handler" method="POST">
+            <p> Your name:</p>
+            <input form="text" name="name-input"/>
+            <br/>
             
-            </a>
-        </div>
+            <p>Leave me some messages here:</p>
+            <textarea name="text-input">
+            </textarea>
+            <br/>
+
+            <p> Your email:</p>
+            <input form="text" name="email-input"/>
+            <br/>
+            <br/>
+            
+            <input type="submit" />
+          </form>
     </div>
   </body>
 </html>
