@@ -1,10 +1,23 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.FullEntity;
+import com.google.cloud.datastore.KeyFactory;
+
+
 
 @WebServlet("/form-handler")
 public class FormHandlerServlet extends HttpServlet {
@@ -16,6 +29,24 @@ public class FormHandlerServlet extends HttpServlet {
     String name = request.getParameter("name-input");
     String textValue = request.getParameter("text-input");
     String email = request.getParameter("email-input");
+    long timeStamp = System.currentTimeMillis();
+    Date date = new Date();
+    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    //Save data in Datastore
+    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Message");
+    FullEntity messageEntity =
+        Entity.newBuilder(keyFactory.newKey())
+            .set("name", name)
+            .set("timestamp", timeStamp)
+            .set("text-input", textValue)
+            .set("email", email)
+            .set("UTCtime", dateFormat.format(date))
+            .build();
+    datastore.put(messageEntity);
+
+
 
     // Print the value so you can see it in the server logs.
     System.out.println("New User submit");
