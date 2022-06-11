@@ -3,7 +3,6 @@ package com.google.sps.servlets;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +16,9 @@ import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.FullEntity;
 import com.google.cloud.datastore.KeyFactory;
 
+import org.jsoup.Jsoup;
+import org.jsoup.safety.Safelist;
+
 
 
 @WebServlet("/form-handler")
@@ -26,9 +28,9 @@ public class FormHandlerServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
     // Get the value entered in the form.
-    String name = request.getParameter("name-input");
-    String textValue = request.getParameter("text-input");
-    String email = request.getParameter("email-input");
+    String name = Jsoup.clean(request.getParameter("name-input"), Safelist.none());
+    String textValue = Jsoup.clean(request.getParameter("text-input"), Safelist.none());
+    String email = Jsoup.clean(request.getParameter("email-input"), Safelist.none());
     long timeStamp = System.currentTimeMillis();
     Date date = new Date();
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
