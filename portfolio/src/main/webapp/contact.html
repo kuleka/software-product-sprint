@@ -17,18 +17,24 @@
   </nav>
   <body>
     <div id="content">
-      <div id="text">
-        <h1>Yisu Wang</h1>
-        <p>This is my portfolio.</p>
-      </div>
-      <button onclick=openAbout()>
-        <div id="btn-txt">About me</div>
-      </button>
+        <form action="/form-handler" method="POST">
+            <p> Your name:</p>
+            <input type="text" name="name-input"/>
+            <br/>
+            
+            <p>Leave me some messages here:</p>
+            <textarea name="text-input"></textarea>
+            <br/>
+
+            <p> Your email:</p>
+            <input type="email" name="email-input"/>
+            <br/>
+            <br/>
+            
+            <button type="submit"> 
+                Submit
+            </button>
+          </form>
     </div>
-    <script>
-      function openAbout() {
-        window.open("about.html", "_self");
-      }
-    </script>
   </body>
 </html>
